@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "A:\\3ai\\RpgApi\\RpgApi.csproj": {}
+    "a:\\3ai\\RpgApi\\RpgApi.csproj": {}
   },
   "projects": {
-    "A:\\3ai\\RpgApi\\RpgApi.csproj": {
+    "a:\\3ai\\RpgApi\\RpgApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\3ai\\RpgApi\\RpgApi.csproj",
+        "projectUniqueName": "a:\\3ai\\RpgApi\\RpgApi.csproj",
         "projectName": "RpgApi",
-        "projectPath": "A:\\3ai\\RpgApi\\RpgApi.csproj",
+        "projectPath": "a:\\3ai\\RpgApi\\RpgApi.csproj",
         "packagesPath": "C:\\Users\\etechas\\.nuget\\packages\\",
-        "outputPath": "A:\\3ai\\RpgApi\\obj\\",
+        "outputPath": "a:\\3ai\\RpgApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -46,15 +46,19 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[7.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[7.0.10, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

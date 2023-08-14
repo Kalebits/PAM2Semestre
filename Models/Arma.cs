@@ -13,6 +13,6 @@ namespace RpgApi.Models
 
         public Personagem Personagem { get; set; }
 
-        public int PersonagemID { get; set; }
+        public int PersonagemId { get; set; }
     }
 }
