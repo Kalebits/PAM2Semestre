@@ -40,7 +40,7 @@ namespace RpgApi.Controllers
                 return Ok(uRetornado);
             }
             catch (System.Exception ex)
-            {
+            { 
                 return BadRequest(ex.Message);
             }
         }
@@ -100,6 +100,35 @@ namespace RpgApi.Controllers
                 }
                 else
                 {
+                   
+                    return Ok(usuario);
+                }
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut("AlterarSenha/{id}")]
+        public async Task<IActionResult> AlterarSenha(Usuario usa)
+        {
+            try
+            {
+                Usuario usuario = await _context.Usuarios
+                    .FirstOrDefaultAsync(x => x.Username.ToLower().Equals(usa.Username.ToLower()) && usa.Email == usa.Email);
+                if (usuario == null)
+                {
+                    throw new SystemException("Usuário não encontrado");
+                }
+                else
+                {
+                     
+                    Criptografia.CriarPasswordHash(usa.PasswordString, out byte[] hash, out byte[] salt);
+                    usa.PasswordString = string.Empty;
+                    usa.PasswordHash = hash;
+                    usa.PasswordSalt = salt;
+                   _context.Usuarios.Update(usa);
                     return Ok(usuario);
                 }
             }

@@ -6,6 +6,7 @@ using RpgApi.Models;
 
 namespace RpgApi.Controllers
 {
+    //Data Source=localhost; Initial Catalog=DB-DS-DS_2023_3AI_A10; User Id=sa; Password=123456;TrustServerCertificate=True
     [ApiController]
     [Route("[Controller]")]
     public class ArmasController : ControllerBase
@@ -63,7 +64,7 @@ namespace RpgApi.Controllers
                 Personagem p = await _context.Personagens
                 .FirstOrDefaultAsync(p => p.Id == novaArma.PersonagemId);
                 if (p == null)
-                    throw new System.Exception("Não existe de personagem com o Id informado");
+                    throw new System.Exception("Não existe personagem com o Id informado");
 
                 await _context.Armas.AddAsync(novaArma);
                 await _context.SaveChangesAsync();
